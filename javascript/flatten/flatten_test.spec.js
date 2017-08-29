@@ -1,3 +1,6 @@
+//  make sure you have jasmine by running npm i -g jasmine
+// to run spec cd ./flatten and run 'jasmine flatten_test.spec.js'
+
 var Flatten = require('./flatten');
 
 describe('flatten', function() {
@@ -30,6 +33,10 @@ describe('flatten', function() {
 
     it('handles 1 depth as an argument', function() {
       expect(Flatten([1, [2, [3]]],1)).toEqual([1, 2, [3]])
+    })
+
+    it('handles 3 depth as an argument', function() {
+      expect(Flatten([1, [2, [3, [4, [5]]]]],3)).toEqual([1, 2, 3, 4, [5]])
     })
   })
 })

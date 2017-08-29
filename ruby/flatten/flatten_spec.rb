@@ -32,5 +32,9 @@ describe 'flatten' do
     it 'handles 1 depth as an argument' do
       expect([1, [2, [3]]].flatten(1)).to match_array([1, 2, [3]])
     end
+
+    it 'handles 3 depth as an argument' do
+      expect([1, [2, [3, [4, [5]]]]].flatten(3)).to match_array([1, 2, 3, 4, [5]])
+    end
   end
 end
